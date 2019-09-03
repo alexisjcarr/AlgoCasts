@@ -32,9 +32,7 @@
 // }
 
 function steps(n, row = 0, stair = "") {
-  if (n === row) {
-    return;
-  }
+  if (n === row) return;
 
   if (n === stair.length) {
     console.log(stair);
@@ -42,14 +40,10 @@ function steps(n, row = 0, stair = "") {
     return;
   }
 
-  if(stair.length <= row) {
-    stair += "#";
-  } else {
-    stair += " "
-  }
-  steps(n, row, stair)
+  stair.length <= row ? (stair += "#") : (stair += " ");
+  steps(n, row, stair);
 }
 
-console.log(steps(2));
+console.log(steps(5));
 
 module.exports = steps;
